@@ -1,0 +1,9 @@
+Species,Lfrom,Lto,a,b
+Spiny_Dogfish,PCL,TLext,3.48859,1.203964
+Spiny_Dogfish,FL,TLext,2.166231,1.100244
+Spiny_Dogfish,TLnat,TLext,1.642064,1.021521
+Spiny_Dogfish,PCL,TLnat,2.53824,1.167937
+Spiny_Dogfish,FL,TLnat,1.224333,1.067497
+Spiny_Dogfish,PCL,FL,1.784371,1.085985
+Spiny_Dogfish,FL,PCL,-0.62902,0.907405
+Spiny_Dogfish,TLnat,PCL,-0.36022,0.834107

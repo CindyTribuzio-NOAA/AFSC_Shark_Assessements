@@ -1,0 +1,204 @@
+FMP,Species,Year,Catch_mt,ABC
+BSAI,Pacific sleeper shark,2011,46.77836356,629
+BSAI,Other shark,2011,4.897853651,351
+BSAI,Salmon shark,2011,47.16511,149
+BSAI,Spiny dogfish,2011,7.819514169,13
+BSAI,Shark Stock Complex,2011,106.6608414,1020
+GOA,Pacific sleeper shark,2011,26.04695761,237
+GOA,Other shark,2011,4.67844866,141
+GOA,Salmon shark,2011,6.725690957,53
+GOA,Spiny dogfish,2011,485.6232917,5766
+GOA,Shark Stock Complex,2011,523.0743889,6197
+BSAI,Pacific sleeper shark,2012,47.65500679,629
+BSAI,Other shark,2012,2.901852061,351
+BSAI,Salmon shark,2012,25.6763436,149
+BSAI,Spiny dogfish,2012,20.09470722,13
+BSAI,Shark Stock Complex,2012,96.32790967,1020
+GOA,Pacific sleeper shark,2012,179.6142887,234
+GOA,Other shark,2012,12.00420928,141
+GOA,Salmon shark,2012,50.47080428,53
+GOA,Spiny dogfish,2012,459.4069808,5600
+GOA,Shark Stock Complex,2012,701.4962831,6028
+BSAI,Pacific sleeper shark,2013,68.3148808,629
+BSAI,Other shark,2013,1.794582786,351
+BSAI,Salmon shark,2013,25.03347702,149
+BSAI,Spiny dogfish,2013,23.54708345,13
+BSAI,Shark Stock Complex,2013,118.6900241,1020
+GOA,Pacific sleeper shark,2013,94.29640089,234
+GOA,Other shark,2013,8.977015793,141
+GOA,Salmon shark,2013,3.140742595,53
+GOA,Spiny dogfish,2013,2049.572322,5600
+GOA,Shark Stock Complex,2013,2155.986481,6028
+BSAI,Pacific sleeper shark,2014,63.27287511,629
+BSAI,Other shark,2014,2.244337332,351
+BSAI,Salmon shark,2014,54.04243721,149
+BSAI,Spiny dogfish,2014,18.67261549,13
+BSAI,Shark Stock Complex,2014,138.2322651,1022
+GOA,Pacific sleeper shark,2014,93.4844808,234
+GOA,Other shark,2014,6.19406523,141
+GOA,Salmon shark,2014,147.2173369,53
+GOA,Spiny dogfish,2014,1335.198598,5562
+GOA,Shark Stock Complex,2014,1582.094481,5989
+BSAI,Pacific sleeper shark,2015,61.41570077,629
+BSAI,Other shark,2015,3.101176567,351
+BSAI,Salmon shark,2015,36.49506977,149
+BSAI,Spiny dogfish,2015,8.27573702,13
+BSAI,Shark Stock Complex,2015,109.2876841,1022
+GOA,Pacific sleeper shark,2015,59.64401185,234
+GOA,Other shark,2015,20.7513182,141
+GOA,Salmon shark,2015,361.818046,53
+GOA,Spiny dogfish,2015,946.8790794,5562
+GOA,Shark Stock Complex,2015,1389.092455,5989
+BSAI,Pacific sleeper shark,2016,80.78575773,629
+BSAI,Other shark,2016,0.616967706,351
+BSAI,Salmon shark,2016,48.19349054,149
+BSAI,Spiny dogfish,2016,5.79485981,13
+BSAI,Shark Stock Complex,2016,135.3910758,1022
+GOA,Pacific sleeper shark,2016,70.57315651,234
+GOA,Other shark,2016,8.922979694,141
+GOA,Salmon shark,2016,90.0892267,53
+GOA,Spiny dogfish,2016,1781.618328,4087
+GOA,Shark Stock Complex,2016,1951.203691,4514
+BSAI,Pacific sleeper shark,2017,56.25801108,315
+BSAI,Other shark,2017,1.718399141,229
+BSAI,Salmon shark,2017,74.59358184,149
+BSAI,Spiny dogfish,2017,10.29546226,18
+BSAI,Shark Stock Complex,2017,142.8654543,517
+GOA,Pacific sleeper shark,2017,139.504976,234
+GOA,Other shark,2017,10.50471713,141
+GOA,Salmon shark,2017,12.58759357,53
+GOA,Spiny dogfish,2017,1609.000017,4087
+GOA,Shark Stock Complex,2017,1771.597304,4514
+BSAI,Pacific sleeper shark,2018,39.93812965,
+BSAI,Other shark,2018,1.661579863,
+BSAI,Salmon shark,2018,51.00937776,
+BSAI,Spiny dogfish,2018,9.980953239,
+BSAI,Shark Stock Complex,2018,102.5900405,517
+GOA,Pacific sleeper shark,2018,250.2133577,234
+GOA,Other shark,2018,23.85091527,141
+GOA,Salmon shark,2018,6.315250164,53
+GOA,Spiny dogfish,2018,3129.319393,4087
+GOA,Shark Stock Complex,2018,3409.698916,4514
+BSAI,Pacific sleeper shark,2019,53.23140541,
+BSAI,Other shark,2019,1.129494353,
+BSAI,Salmon shark,2019,92.19446665,
+BSAI,Spiny dogfish,2019,4.163052143,
+BSAI,Shark Stock Complex,2019,150.7184186,517
+GOA,Pacific sleeper shark,2019,92.33500953,234
+GOA,Other shark,2019,14.38579699,141
+GOA,Salmon shark,2019,14.93595007,53
+GOA,Spiny dogfish,2019,1867.764541,7757
+GOA,Shark Stock Complex,2019,1989.421297,8184
+BSAI,Pacific sleeper shark,2020,68.06168218,
+BSAI,Other shark,2020,1.834943102,
+BSAI,Salmon shark,2020,105.7060969,
+BSAI,Spiny dogfish,2020,4.415205502,
+BSAI,Shark Stock Complex,2020,180.0179277,517
+GOA,Pacific sleeper shark,2020,98.32256266,234
+GOA,Other shark,2020,5.753311721,141
+GOA,Salmon shark,2020,37.13319974,53
+GOA,Spiny dogfish,2020,1217.210476,7757
+GOA,Shark Stock Complex,2020,1358.41955,8184
+BSAI,Pacific sleeper shark,2021,77.74134395,
+BSAI,Other shark,2021,72.59328391,
+BSAI,Salmon shark,2021,206.9672832,
+BSAI,Spiny dogfish,2021,1.791413217,
+BSAI,Shark Stock Complex,2021,359.0933243,517
+GOA,Pacific sleeper shark,2021,90.72986066,234
+GOA,Other shark,2021,19.31445255,141
+GOA,Salmon shark,2021,44.76574261,53
+GOA,Spiny dogfish,2021,1709.519608,3327
+GOA,Shark Stock Complex,2021,1864.329664,3755
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,

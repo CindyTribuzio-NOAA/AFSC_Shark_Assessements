@@ -1,0 +1,4 @@
+Year,Project,Station_No,Trip_No,Set_No,Lat,Long,Avg_Depth_fms,hooks_tot,hooks_bait,hooks_bare,hooks_inval,sable_no,dogf_no,PSS_no
+2017,Chatham Sablefish LL Survey,45,3,4,57.787,134.8355,286,1122,466,179,36,384,0,0
+2017,Chatham Sablefish LL Survey,55,1,13,56.11025,134.509167,285,1124,206,447,36,401,1,0
+2017,Clarence Sablefish LL Survey,113,2,10,5481.9233,-131.685617,207,1125,34,635,1,362,4,0
