@@ -1,0 +1,1 @@
+for(i in 1:length(DLMdat))assign(DLMdat[[i]]@Name,DLMdat[[i]])

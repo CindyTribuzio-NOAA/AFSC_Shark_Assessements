@@ -1,0 +1,3123 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="DLMtool_methods_codes_files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Cope, Jason</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Cope, Jason</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>85</o:TotalTime>
+  <o:Created>2017-04-02T22:21:00Z</o:Created>
+  <o:LastSaved>2017-04-02T22:21:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1401</o:Words>
+  <o:Characters>7990</o:Characters>
+  <o:Company>NWFSC</o:Company>
+  <o:Lines>66</o:Lines>
+  <o:Paragraphs>18</o:Paragraphs>
+  <o:CharactersWithSpaces>9373</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="DLMtool_methods_codes_files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="DLMtool_methods_codes_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ActiveWritingStyle Lang="EN-US" VendorID="64" DLLVersion="131078"
+   NLCheck="1">0</w:ActiveWritingStyle>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:8.0pt;
+	mso-para-margin-left:0in;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=680
+ style='width:510.3pt;border-collapse:collapse;mso-yfti-tbllook:1184;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;border-top:solid windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 2.25pt;border-right:none;
+  background:#B7FFFF;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Code<o:p></o:p></span></b></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;border-top:solid windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 2.25pt;border-right:none;
+  background:#B7FFFF;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Name<o:p></o:p></span></b></p>
+  </td>
+  <td width=55 style='width:41.4pt;border-top:solid windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 2.25pt;border-right:none;
+  background:#B7FFFF;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Type<o:p></o:p></span></b></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;border-top:solid windowtext 2.25pt;
+  border-left:none;border-bottom:solid windowtext 2.25pt;border-right:none;
+  background:#B7FFFF;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Description<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:12.75pt'>
+  <td width=680 nowrap colspan=4 style='width:510.3pt;border:none;border-bottom:
+  solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;
+  background:#FFD966;mso-background-themecolor:accent4;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>INPUT
+  CONTROLS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;border:none;mso-border-top-alt:solid windowtext .5pt;
+  background:#FFD966;mso-background-themecolor:accent4;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>curE</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;background:#FFD966;mso-background-themecolor:accent4;
+  mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Current effort<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;border:none;mso-border-top-alt:solid windowtext .5pt;
+  background:#FFD966;mso-background-themecolor:accent4;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;border:none;mso-border-top-alt:solid windowtext .5pt;
+  background:#FFD966;mso-background-themecolor:accent4;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A reference input control that
+  maintains current effort (subject to fishing efficiency changes)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>curE75<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>75% of Current effort<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A reference input control that
+  maintains 75% of current effort<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DDe</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Delay-Difference- effort control<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Effort control version of DD - Delay - Difference Stock
+  Assessment with UMSY and MSY leading</span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DDe75<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Delay-Difference- effort control
+  75%<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Effort control version of DD - Delay - Difference Stock
+  Assessment with UMSY and MSY leading that fishes at 75 per cent of FMSY</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DDess</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Delay-Difference- effort control
+  75% effort searching<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Effort searching version of DD - Delay - Difference Stock
+  Assessment with UMSY and MSY leading that fishes at 75 per cent of FMSY</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>ItargetE1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Effort adjusted target CPUE<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap rowspan=2 style='width:3.7in;background:#FFD966;
+  mso-background-themecolor:accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Both of these management procedure incrementally adjusts the
+  effort to reach a target CPUE / relative abundance index.</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>ItargetE4<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Effort adjusted target CPUE<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>LstepCE1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Effort adjusted to recent mean
+  length version 1<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap rowspan=2 style='width:3.7in;background:#FFD966;
+  mso-background-themecolor:accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Management procedures that
+  incrementally adjusts the effort according to the mean length of recent
+  catches.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>LstepCE2<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Effort adjusted to recent mean
+  length version 2<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Ltarget1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Effort adjusted to mean length
+  version 1<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap rowspan=2 style='width:3.7in;background:#FFD966;
+  mso-background-themecolor:accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;
+  height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>A management procedure that incrementally adjusts the TAC to
+  reach a target mean length in catches.</span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Ltarget1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Effort adjusted to mean length
+  version 2<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Effort<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>matlenlim</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Length selectivity equal to
+  maturity<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Sel.<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=apple-converted-space><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;color:black'>Fi</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;color:black'>shing
+  selectivity is set according to the maturity curve</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>matlenlim2<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Length selectivity higher than
+  maturity<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Sel.<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>fishing selectivity is set slightly higher than the maturity
+  curve</span><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>matagelim</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Age selectivity matches the
+  maturity curve<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Sel.<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fishing selectivity at age is the
+  same as fraction mature at age<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MRreal</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Area 1 Marine Reserve with
+  reallocation<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>MPA<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Sets a marine reserve in Area 1
+  and reallocates fishing effort to area 2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MRnoreal</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Area 1 Marine Reserve with no
+  reallocation<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>MPA<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Sets a marine reserve in Area 1
+  with no reallocation of fishing effort to area 2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>slotlim</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Slot limit<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Sel.<o:p></o:p></span></p>
+  </td>
+  <td width=355 nowrap style='width:3.7in;border:none;border-bottom:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;background:#FFD966;mso-background-themecolor:
+  accent4;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Sets a slot limit to control
+  effort.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19;height:12.95pt'>
+  <td width=680 nowrap colspan=4 style='width:510.3pt;border:none;border-bottom:
+  solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>OUTPUT
+  CONTROLS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20;height:16.15pt'>
+  <td width=107 nowrap style='width:80.3pt;border:none;mso-border-top-alt:solid windowtext .5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:16.15pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>AvC</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;background:#A8D08D;mso-background-themecolor:accent6;
+  mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:16.15pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Average Catch<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;border:none;mso-border-top-alt:solid windowtext .5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:16.15pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:16.15pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Sets TAC as average historical catch</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>BK<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Beddington</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> and Kirkwood life-history <o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Sets an OFL according to current
+  abundance and an approximation of FMSY based on length at first capture.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>BK_CC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>BK linked to a catch curve<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Catch-curve analysis is used to
+  estimate current abundance that is linked to BK FMSY estimate to give the OFL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23;height:14.25pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:14.25pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>BK_ML<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:14.25pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>BK linked to a mean length <o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:14.25pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:14.25pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length estimate of current F
+  (abundance) is linked to BK FMSY estimate to provide the OFL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CC1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Constant catch linked to average
+  catches<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is <span class=SpellE>a</span>
+  average historical catches <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:25;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CC4<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Constant catch linked to average
+  catches<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is 70% of<span
+  style='mso-spacerun:yes'>  </span>average historical catches <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:26;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CompSRA</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Age Composition - Stock Reduction
+  Analysis<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>F<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>What constant F creates the
+  current composition, what is FMSY? OFL = FMSY x F / C<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:27;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CompSRA4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CompSRA</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> linked to a 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>F<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A 40-10 harvest control rule is
+  added to the <span class=SpellE>CompSRA</span> MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:28;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DAAC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Depletion Adjusted Average Catch</span><span style='font-size:
+  10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>DCAC multiplied by 2*depletion and divided by BMSY/B0 (<span
+  class=SpellE>Bpeak</span>)</span><span style='font-size:10.0pt;font-family:
+  "Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>HDAAC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Hybrid </span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;color:black'>Depletion
+  Adjusted Average Catch</span><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>DCAC multiplied by 2*depletion and divided by BMSY/B0 (<span
+  class=SpellE>Bpeak</span>) when below BMSY, and DCAC above BMSY.</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:30;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Depletion-Based Stock Reduction
+  Analysis<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>The OFL is M x (FMSY/M) x
+  depletion x unfished biomass (the first three factors are user defined, the
+  fourth is determined by historical catches and stock reduction analysis)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:31;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA_40<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA assuming current depletion
+  is 40%<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA where stock depletion is
+  fixed at 40%<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:32;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA_ML<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA using mean length to
+  estimate depletion<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length estimate of depletion
+  is used to inform DBSRA depletion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:33;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DBSRA linked to a 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A 40-10 harvest control rule is
+  added to the DBSRA MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:34;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Depletion-Corrected Average Catch<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>An MSY proxy that accounts for
+  catches <span class=SpellE>occuring</span> whilst dropping to productive
+  stock sizes <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:35;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC_ML<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC using mean length to estimate
+  depletion<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length estimate of depletion
+  is used to inform DCAC depletion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:36;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC40<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC assuming depletion is 40%<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC where stock depletion is
+  fixed at 40%<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:37;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC linked to a 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A 40-10 harvest control rule is
+  added to the DCAC MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:38;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>EDCAC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Extra DCAC<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DCAC * 2 * depletion * B0 / BMSY<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:39;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DD<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Delay-Difference assessment <o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>Pop.D</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A delay difference model is fitted
+  to historical abundance indices and catches. The model does not estimate
+  process error. <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:40;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DD4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DD linked to a 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>Pop.D</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A 40-10 harvest control rule is
+  added to the DD MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:41;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DepF</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> linked to a production curve control rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Below BMSY, the OFL is multiplied
+  by a production curve <span class=SpellE>ie</span>. dep x (1-dep) x 4<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:42;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>DynF</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Dynamic <span class=SpellE>Fratio</span>
+  MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>PopDy</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Inferred derivative of surplus
+  production with biomass is used to adjust F in relation to M<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:43;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fadapt</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Adaptive F MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>PopDy</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Inferred derivative of surplus
+  production with biomass is used to adjust F between bounds FMSY/2 and 2FMSY<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:44;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fdem</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Demographic FMSY method<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>FMSY <span class=GramE>is
+  calculated</span> as r/2 where r is calculated from a demographic approach (including
+  steepness). Coupled with an estimate of current abundance that gives you the
+  OFL.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:45;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fdem_CC</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fdem</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> linked to a catch curve<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Current abundance estimates from a
+  catch curve are linked to <span class=SpellE>Fdem</span> estimate of FMSY<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:46;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fdem_ML</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fdem</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> using mean length to estimate depletion<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length estimate of current
+  abundance is lined to <span class=SpellE>Fdem</span> estimate of FMSY<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:47;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>FMSYref</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>FMSY ref</span><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>A reference FMSY method (uses perfect information about FMSY)</span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:48;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>FMSYref50<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Half of FMSY ref<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>50% of true simulated OFL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:49;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>FMSYref75<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>75% of FMSY ref<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>75% of true simulated OFL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:50;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fixed FMSY to M ratio<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>FMSY is a fixed fraction of
+  natural mortality rate<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:51;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> with 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  color:black'>Calculates the OFL based on a fixed FMSY/M multiplied by a
+  current estimate of abundance. In this method DBSRA is paired with the 40-10
+  rule; OFL = 0 at B<sub>10%</sub>.</span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:52;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio_CC</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> linked to a catch curve<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Current abundance estimates from a
+  catch curve are linked to the <span class=SpellE>Fratio</span> MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:53;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio_ML</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> using mean length to estimate depletion<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Length<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length estimate of depletion
+  is used to inform <span class=SpellE>Fratio</span> abundance<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:54;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Fratio</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> linked to a 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A 40-10 harvest control rule is
+  added to the <span class=SpellE>Fratio</span> MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:55;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>GB_CC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Geromont</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> and Butterworth constant catch<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MSY seeking rule that uses average
+  historical catch as a proxy for MSY<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:56;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>GB_slope</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Geromont</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> and Butterworth CPUE slope<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC recommendations to stabilize
+  CPUE<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:57;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>GB_target</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Geromont</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'> and Butterworth target CPUE and catch<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC recommendations to achieve
+  target CPUE and target catch<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:58;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Gcontrol</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>G-control MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>PopDy</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Inferred derivative of surplus
+  production with biomass is used to alter the TAC<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:59;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Islope1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CPUE slope MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is adjusted to maintain
+  constant CPUE<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:60;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Islope4 <o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CPUE slope MP (more biologically
+  precautionary)<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is adjusted to maintain
+  constant CPUE<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:61;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Itarget1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CPUE target MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is adjusted to achieve a
+  target CPUE<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:62;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Itarget4<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>CPUE target MP (more biologically
+  precautionary)<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is adjusted to achieve a
+  target CPUE<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:63;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>LstepCC1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Length<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length relative to historical
+  levels is used to alter the TAC<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:64;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>LstepCC4<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length MP (more biologically
+  precautionary)<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Length<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length relative to historical
+  levels is used to alter the TAC<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:65;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Ltarget1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Length target MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Length<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is adjusted to reach a target
+  mean length<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:66;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Ltarget4<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Length target MP (more
+  biologically precautionary)<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Length<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>TAC is adjusted to reach a target
+  mean length<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:67;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MCD<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean Catch Depletion MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MP to demonstrate high information
+  content of depletion OFL = mean catches x 2 x dep <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:68;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MCD4010<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>MCD linked to a 40-10 rule<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A 40-10 harvest control rule is
+  added to the MCD MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:69;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Nref</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>No reference point<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Sets catch = 0.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:70;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Rcontrol</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>R-control MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>A demographic prior for intrinsic
+  rate of increase is used to firm up surplus production calculation of
+  G-control<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:71;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Rcontrol2<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>R-control with quadratic SP-B
+  relationship<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>As R-control but fits a quadratic
+  relationship to the derivative of SP with stock biomass<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:72;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SBT1<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Southern Bluefin Tuna 1<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>An MP that adjusts TACs according
+  to apparent trend in CPUE<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:73;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SBT2<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Southern Bluefin Tuna 2<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>EmInd</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>An MP that adjusts TACs according
+  to achieve target CPUE and catch<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:74;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SPmod</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Surplus production based TAC
+  modifier<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>PopDy</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Inferred derivative of surplus
+  production with biomass is used to adjust the TAC<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:75;height:25.5pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SPMSY<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Catch-trend MSY MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Catch<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:25.5pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Catch trends reflect depletion and
+  combined with catches can be used to find viable r-K pairs. The OFL is dep x
+  (1-dep) x 2 x r x K<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:76;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=SpellE><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SPslope</span></span><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Slope in surplus production MP<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>PopDy</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Inferred derivative of surplus
+  production with biomass is used to adjust the TAC<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:77;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SPSRA<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Surplus Production Stock Reduction
+  Analysis<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>PopDy</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Like DBSRA but uses a surplus production
+  model and a prior for intrinsic rate of increase<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:78;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SPSRA_ML<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>SPSRA using mean length to
+  estimate depletion<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>Length<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>mean length estimate of depletion
+  is used to inform SPSRA depletion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:79;height:15.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>YPR<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Yield Per Recruit<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:15.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Yield Per Recruit estimate of F0.1
+  (FMSY proxy) multiplied by estimate of current stock biomass<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:80;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>YPR_CC<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>YPR linked to a catch-curve <o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'>LH<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;background:#A8D08D;mso-background-themecolor:
+  accent6;mso-background-themetint:153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Current abundance estimates of a
+  catch curve analysis is linked to the YPR MP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:81;mso-yfti-lastrow:yes;height:12.75pt'>
+  <td width=107 nowrap style='width:80.3pt;border:none;border-bottom:solid windowtext 1.5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>YPR_ML<o:p></o:p></span></p>
+  </td>
+  <td width=163 nowrap style='width:122.2pt;border:none;border-bottom:solid windowtext 1.5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>YPR using mean length to estimate
+  current abundance<o:p></o:p></span></p>
+  </td>
+  <td width=55 style='width:41.4pt;border:none;border-bottom:solid windowtext 1.5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span class=SpellE><span
+  style='font-size:10.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+  "Times New Roman"'>LH;Lt</span></span><span style='font-size:10.0pt;
+  font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman"'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:3.7in;border:none;border-bottom:solid windowtext 1.5pt;
+  background:#A8D08D;mso-background-themecolor:accent6;mso-background-themetint:
+  153;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:10.0pt;font-family:"Arial",sans-serif;
+  mso-fareast-font-family:"Times New Roman"'>Mean length estimate of current
+  abundance is used to inform YPR abundance<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
