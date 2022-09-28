@@ -14,10 +14,10 @@ database.csv
 archive
 
 # folders
-Outside_Model_Analytics/
 */RFX/ADMB_output/
 */RFX/ADMB_out_files/
 Documents/
+Outside_Analyses/
 
 # large files
 *RACE_CATCH*
