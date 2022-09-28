@@ -24,8 +24,10 @@ Outside_Analyses/
 
 # Don't track data
 *.xlsx
-*.xls
-*.csv
+*.xlsm
+*.docx
+*.pptx
+*.Rdata
 
 # Don't track binary or fig files
 *.docx
