@@ -4,11 +4,9 @@
 # Last Updated: 5_10_2020
 
 # Setup ----
-AYR<-2021
-LAYR<-2020
-datadir<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-outdir<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
-olddir<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
+datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
+outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
+oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 
 # Retrieve Data ----
 olddat<-read_csv(paste(olddir,"/IPHC_dogfish_lengths",LAYR,".csv",sep="")) %>% 

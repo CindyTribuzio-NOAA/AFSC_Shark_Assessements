@@ -3,13 +3,9 @@
 # Last Updated: 5_10_2020
 
 # Setup ----
-library(plyr)
-library(reshape2)
-AYR<-2020
-LAYR<-2018
-datadir<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-outdir<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
-olddir<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
+datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
+outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
+oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 
 # SEAK LL Survey ----
 # Contact Rhea Erhsmann, 25_9_2020
@@ -94,13 +90,9 @@ write.csv(TWL_new,paste(outdir,"/ADFG_LRGTWL",AYR,".csv",sep=""),row.names=F)
 # data provided by Sarah Webster
 
 # Setup ----
-library(plyr)
-library(reshape2)
-AYR<-2020
-LAYR<-2018
-datadir<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-outdir<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
-olddir<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
+datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
+outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
+oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 
 # Get Data ----
 # NOTE: these data are formatted horribly when they come in, takes a lot of massaging to make it nice

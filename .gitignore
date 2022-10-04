@@ -21,6 +21,7 @@ Outside_Analyses/
 
 # large files
 *RACE_CATCH*
+*RACE_HAUL*
 
 # Don't track data
 *.xlsx

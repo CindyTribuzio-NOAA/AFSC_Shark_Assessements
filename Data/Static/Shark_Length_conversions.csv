@@ -1,9 +1,13 @@
-Species,Lfrom,Lto,a,b
-Spiny_Dogfish,PCL,TLext,3.48859,1.203964
-Spiny_Dogfish,FL,TLext,2.166231,1.100244
-Spiny_Dogfish,TLnat,TLext,1.642064,1.021521
-Spiny_Dogfish,PCL,TLnat,2.53824,1.167937
-Spiny_Dogfish,FL,TLnat,1.224333,1.067497
-Spiny_Dogfish,PCL,FL,1.784371,1.085985
-Spiny_Dogfish,FL,PCL,-0.62902,0.907405
-Spiny_Dogfish,TLnat,PCL,-0.36022,0.834107
+Species,species_code,Lfrom,Lto,a,b,Source
+spiny dogfish,310,PCL,TLext,3.48859,1.203964,Tribuzio and Kruse 2012
+spiny dogfish,310,FL,TLext,2.166231,1.100244,Tribuzio and Kruse 2012
+spiny dogfish,310,TLnat,TLext,1.642064,1.021521,Tribuzio and Kruse 2012
+spiny dogfish,310,PCL,TLnat,2.53824,1.167937,Tribuzio and Kruse 2012
+spiny dogfish,310,FL,TLnat,1.224333,1.067497,Tribuzio and Kruse 2012
+spiny dogfish,310,PCL,FL,1.784371,1.085985,Tribuzio and Kruse 2012
+spiny dogfish,310,FL,PCL,-0.62902,0.907405,Tribuzio and Kruse 2012
+spiny dogfish,310,TLnat,PCL,-0.36022,0.834107,Tribuzio and Kruse 2012
+sleeper shark,320,TLnat,PCL,-10.226,0.8792,AFSC data PSS_length_conversions.xlsx
+sleeper shark,320,FL,PCL,-1.8234,0.8863,AFSC data PSS_length_conversions.xlsx
+salmon shark,232,PCL,FL,6.91,1.08,Goldman and Musick 2006
+salmon shark,232,PCL,TLnat,15.19,1.15,Goldman and Musick 2006

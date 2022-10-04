@@ -1,28 +1,53 @@
-# Compile ADFG survey data ----
+# Query and clean AFSC LL survey data ----
 # Contact: cindy.tribuzio@noaa.gov
-# Last Updated: 5_10_2020
+# Last Updated: Sept 2022
 
 # Setup ----
-library(plyr)
-library(reshape2)
-AYR<-2020
-LAYR<-2018
-datadir<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-outdir<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
-olddir<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
+libs <- c("tidyverse", "RODBC", "lubridate", "janitor", "odbc", "DBI")
+if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
+lapply(libs, library, character.only = TRUE)
 
-# download full data set each year, don't worry about past years data
+dbname <- "akfin"
+db <- read_csv('database.csv')
+database_akfin=db %>% filter(database == dbname) %>% select(database) #need to add filter for AKFIN user/pass only
+username_akfin=db %>% filter(database == dbname) %>% select(username)
+password_akfin=db %>% filter(database == dbname) %>% select(password)
+
+channel_akfin <- odbcConnect(dbname, uid = username_akfin, pwd = password_akfin, believeNRows=FALSE)
+
+AYR <- 2022 #Assessment year
+
+outpath <- paste0("Data/Cleaned/", AYEAR)
+dir.create(outpath)
+rawpath <- paste0("Data/Annual_updates/", AYEAR) 
+dir.create(rawpath)
+
+# Get data ----
+sharkRPN_FMP <- sqlQuery(channel_akfin, query = ("
+                select    *
+                from      afsc.lls_fmp_all_strata
+                where     species_code in (150, 222, 232, 310, 320,351)")) %>% 
+  clean_names() 
+
+sharkRPN_area <- sqlQuery(channel_akfin, query = ("
+                select    *
+                from      afsc.lls_fmp_subarea_all_strata
+                where     species_code in (150, 222, 232, 310, 320,351)")) %>% 
+  clean_names() 
+
 # Data cleanup ----
-AFSCLL<-read.csv(paste(datadir,"/AFSCLL_Area Stratum Efforts",AYR,".csv",sep=""), header=T)
-AFSCLL<-AFSCLL[AFSCLL$Survey.Country=="United States",]
-colnames(AFSCLL)[1]<-"Year"
-AFSCLL$FMP<-""
-AFSCLL$FMP[AFSCLL$NPFMC.Sablefish.Mgmt.Area=="Aleutians"]<-"BSAI"
-AFSCLL$FMP[AFSCLL$NPFMC.Sablefish.Mgmt.Area=="Bering Sea"]<-"BSAI"
-AFSCLL$FMP[AFSCLL$NPFMC.Sablefish.Mgmt.Area=="Central Gulf of Alaska"]<-"GOA"
-AFSCLL$FMP[AFSCLL$NPFMC.Sablefish.Mgmt.Area=="Western Gulf of Alaska"]<-"GOA"
-AFSCLL$FMP[AFSCLL$NPFMC.Sablefish.Mgmt.Area=="West Yakutat"]<-"GOA"
-AFSCLL$FMP[AFSCLL$NPFMC.Sablefish.Mgmt.Area=="East Yakutat/Southeast"]<-"GOA"
-AFSC2<-ddply(AFSCLL,c("Year","Species.Code","FMP"),summarize,sumRPN=sum(RPN,na.rm=T))
+RPN_fmp <- sharkRPN_FMP %>% 
+  filter(country == "United States") %>% 
+  select(c("year", "fmp_management_area", "species_code", "species", "cpue",
+           "cpue_var", "rpn", "rpn_var", "rpw", "rpw_var")) %>% 
+  rename(mgmt_area = fmp_management_area)
 
-write.csv(AFSC2,paste(outdir,"/AFSCLL_RPN",AYR,".csv",sep=""),row.names=F)
+RPN_area <- sharkRPN_area %>% 
+  filter(country == "United States") %>% 
+  select(c("year", "council_management_area", "species_code", "species", 
+           "cpue", "cpue_var", "rpn", "rpn_var", "rpw", "rpw_var")) %>% 
+  rename(mgmt_area = council_management_area)
+
+AFSCLL <- RPN_fmp %>% bind_rows(RPN_area)
+
+write.csv(AFSCLL,paste(outpath,"/AFSCLL_RPN_sharks",AYR,".csv",sep=""),row.names=F)

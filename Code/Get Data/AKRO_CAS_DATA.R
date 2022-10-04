@@ -7,22 +7,14 @@
 ##1) auto query from AKFIN 
 
 # Setup ----
-AYR<-2020 #assessment year
-datadir<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-ifelse(!dir.exists(datadir),dir.create(paste(getwd(),"/Data/Annual_updates/",AYR,sep="")),print("directory exists"))
+datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
+outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
 
-outdir<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
-if(!dir.exists(outdir)){
-  dir.create(paste(getwd(),"/Data/Cleaned/",AYR,sep=""))
-  print("created new directory")
-}else{
-  print("directory exists")
-}
 
 # Clean old data ----
 # should only need to run this once, then never again, here for records
-old_dat<-as.data.frame(read.csv(paste(getwd(),"/Data/Static","/pre2003_shark_catch.csv",sep=""), header=T))
-colnames(old_dat)
+# old_dat<-as.data.frame(read.csv(paste(getwd(),"/Data/Static","/pre2003_shark_catch.csv",sep=""), header=T))
+# colnames(old_dat)
 #[1] "Year"                      "Week.Ending.Date"          "Week.Number"               "WED..mmdd."                "Detail.Record.Count"       "Date.Received.from.AKR"   
 #[7] "Date.Loaded.to.Repository" "Processor.ID"              "Processor.Vessel.Name"     "Processor.Name"            "Processor.Plant.Operation" "Vessel.ADFG"              
 #[13] "Vessel.Name"               "Vessel.Length"             "Trip.Target.Group"         "Trip.Target.Name"          "Species.Group"             "Species"                  
@@ -30,30 +22,38 @@ colnames(old_dat)
 #[25] "X..Distinct.Vessels"       "Conf.Flag"                 "Catch..mt."                "Weight.Posted..Sum." 
 
 #fixes species names and target names
-levels(old_dat$Species)[levels(old_dat$Species)=="\"shark, spiny dogfish\""]<-"Spiny Dogfish"
-levels(old_dat$Species)[levels(old_dat$Species)=="\"Pacific sleeper shark\""]<-"Pacific Sleeper Shark"
-levels(old_dat$Species)[levels(old_dat$Species)=="\"shark, salmon\""]<-"Salmon Shark"
-levels(old_dat$Species)[levels(old_dat$Species)=="\"shark, other\""]<-"Other Sharks"
+#levels(old_dat$Species)[levels(old_dat$Species)=="\"shark, spiny dogfish\""]<-"Spiny Dogfish"
+#levels(old_dat$Species)[levels(old_dat$Species)=="\"Pacific sleeper shark\""]<-"Pacific Sleeper Shark"
+#levels(old_dat$Species)[levels(old_dat$Species)=="\"shark, salmon\""]<-"Salmon Shark"
+#levels(old_dat$Species)[levels(old_dat$Species)=="\"shark, other\""]<-"Other Sharks"
 
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Pollock - midwater"]<-"Pollock"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Pollock - bottom"]<-"Pollock"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Rex Sole - GOA"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Rock Sole - BSAI"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Arrowtooth Flounder"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Flathead Sole"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Kamchatka Flounder - BSAI"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Shallow Water Flatfish - GOA"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Yellowfin Sole - BSAI"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Greenland Turbot - BSAI"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Other Flatfish - BSAI"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Deep Water Flatfish - GOA"]<-"Flatfish"
-levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)==""]<-"Other"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Pollock - midwater"]<-"Pollock"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Pollock - bottom"]<-"Pollock"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Rex Sole - GOA"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Rock Sole - BSAI"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Arrowtooth Flounder"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Flathead Sole"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Kamchatka Flounder - BSAI"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Shallow Water Flatfish - GOA"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Yellowfin Sole - BSAI"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Greenland Turbot - BSAI"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Other Flatfish - BSAI"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)=="Deep Water Flatfish - GOA"]<-"Flatfish"
+#levels(old_dat$Trip.Target.Group)[levels(old_dat$Trip.Target.Group)==""]<-"Other"
 
-old_dat<-old_dat[old_dat$Species!="",]
+#old_dat<-old_dat[old_dat$Species!="",]
 
-write.csv(old_dat,paste(getwd(),"/Data/Static/pre2003_shark_cleaned.csv",sep=""),row.names = F)
+#write.csv(old_dat,paste(getwd(),"/Data/Static/pre2003_shark_cleaned.csv",sep=""),row.names = F)
 
-# Groundfish Total Catch by Fishery ----
+# CAS DATA ----
+# SQL query
+
+
+
+
+
+
+
 catchdat<-read.csv(paste(datadir,"/Groundfish Total Catch by Fishery_shark",AYR,".csv",sep=""),header = T)
 
 #fixes species names and target names
