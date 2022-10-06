@@ -10,8 +10,16 @@
 datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
 outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
 
+dbname <- "akfin"
+db <- read_csv('database.csv')
+database_akfin=db %>% filter(database == dbname) %>% select(database) #need to add filter for AKFIN user/pass only
+username_akfin=db %>% filter(database == dbname) %>% select(username)
+password_akfin=db %>% filter(database == dbname) %>% select(password)
 
-# Clean old data ----
+assign(paste0("channel_", dbname), odbcConnect(dbname, uid = username_akfin, pwd = password_akfin, believeNRows=FALSE))
+
+
+# Pre-2003 Catch Data ----
 # should only need to run this once, then never again, here for records
 # old_dat<-as.data.frame(read.csv(paste(getwd(),"/Data/Static","/pre2003_shark_catch.csv",sep=""), header=T))
 # colnames(old_dat)
@@ -46,55 +54,113 @@ outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
 #write.csv(old_dat,paste(getwd(),"/Data/Static/pre2003_shark_cleaned.csv",sep=""),row.names = F)
 
 # CAS DATA ----
-# SQL query
+# SQL query with some data manipulation
+CASdat <- sqlQuery(channel_akfin, query = ("
+                select year, week_end_date, wed, fmp_area,	fmp_subarea, reporting_area_code, agency_gear_code,
+                       trip_target_group, trip_target_name, species_group_name, species_name, processor_permit_id,
+                       ito_company processor_name, ito_plant processor_plant, ves_akr_adfg, ves_akr_name,	ves_akr_length,
+                       retained_or_discarded, weight_posted, gf_harvest_sector, deployment_trip_start_date,	deployment_trip_end_date,
+                       deployment_trip_pk, monitoring_status,	sampling_strata_deployment_category, sampling_strata,
+                       sampling_strata_name, sampling_strata_selection_rate
+                from council.comprehensive_blend_ca
+                where year >= 2003
+                and (fmp_area = 'GOA' or fmp_area = 'BSAI' or fmp_area = 'INSD')
+                and (species_name = 'shark, spiny dogfish' or 
+                     species_name = 'Pacific sleeper shark' or 
+                     species_name = 'shark, salmon' or
+                     species_name = 'shark, other')")) %>% 
+  clean_names() %>% 
+  as.data.frame() %>% 
+  group_by(year, week_end_date, wed, fmp_area,	fmp_subarea, reporting_area_code, agency_gear_code,
+           trip_target_group, trip_target_name, species_group_name, species_name, processor_permit_id,
+           processor_name, processor_plant, ves_akr_adfg, ves_akr_name,	ves_akr_length,
+           retained_or_discarded, gf_harvest_sector, deployment_trip_start_date,	deployment_trip_end_date,
+           deployment_trip_pk, monitoring_status,	sampling_strata_deployment_category, sampling_strata,
+           sampling_strata_name, sampling_strata_selection_rate) %>% 
+  summarise(catch_mt = sum(weight_posted)) %>% 
+  mutate(species = if_else(species_name == "shark, spiny dogfish", "Spiny Dogfish",
+                           if_else(species_name == 'Pacific sleeper shark', "Pacific Sleeper Shark",
+                                   if_else(species_name == "shark, salmon", "Salmon Shark", 'Other Sharks'))),
+         trip_target = if_else(trip_target_name == "Pollock - midwater", "Pollock",
+                               if_else(trip_target_name == "Pollock - bottom", "Pollock",
+                                       if_else(trip_target_name == "Pacific Cod", "Pacific Cod",
+                                               if_else(trip_target_name == "Atka Mackerel", "Atka Mackerel",
+                                                       if_else(trip_target_name == "Other Species", "Other",
+                                                               if_else(trip_target_name == "Sablefish", "Sablefish",
+                                                                       if_else(trip_target_name == "Halibut", "Halibut",
+                                                                               if_else(trip_target_name == "Rockfish", "Rockfish",
+                                                                                       if_else(is.na(trip_target_name), "Other", "Flatfish")))))))))) %>% 
+  select(-c(species_name))
+write_csv(CASdat, paste0(datapath, "/confidential_CAS_sharks", AYR, ".csv"))
 
-
-
-
-
-
-
-catchdat<-read.csv(paste(datadir,"/Groundfish Total Catch by Fishery_shark",AYR,".csv",sep=""),header = T)
-
-#fixes species names and target names
-levels(catchdat$Species)[levels(catchdat$Species)=="\"shark, spiny dogfish\""]<-"Spiny Dogfish"
-levels(catchdat$Species)[levels(catchdat$Species)=="\"Pacific sleeper shark\""]<-"Pacific Sleeper Shark"
-levels(catchdat$Species)[levels(catchdat$Species)=="\"shark, salmon\""]<-"Salmon Shark"
-levels(catchdat$Species)[levels(catchdat$Species)=="\"shark, other\""]<-"Other Sharks"
-
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Pollock - midwater"]<-"Pollock"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Pollock - bottom"]<-"Pollock"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Rex Sole - GOA"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Rock Sole - BSAI"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Alaska Plaice - BSAI"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Arrowtooth Flounder"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Flathead Sole"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Kamchatka Flounder - BSAI"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Shallow Water Flatfish - GOA"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Yellowfin Sole - BSAI"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Greenland Turbot - BSAI"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Other Flatfish - BSAI"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Deep Water Flatfish - GOA"]<-"Flatfish"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)==""]<-"Other"
-levels(catchdat$Trip.Target.Name)[levels(catchdat$Trip.Target.Name)=="Other Species"]<-"Other"
-
-colnames(catchdat)[1]<-"Year"
-
-write.csv(catchdat,paste(outdir,"/CAS_GFTBF_Sharks",AYR,".csv",sep=""),row.names=F)
 
 # Test for changes in data ----
-LAYR<-2018
-CAS_layr<-read.csv(paste(getwd(),"/Data/Cleaned/",LAYR,"/CAS_GFTBF_Sharks",LAYR,".csv",sep=""),header=T)
-Cl<-ddply(CAS_layr,c("Year","FMP.Area","NMFS.Area","Trip.Target.Name","Gear","Species"),summarize,OLD_Catch=sum(Catch..mt.))
+# Does updated code data query match what AKFIN Answers creates?
+# Should only need to do this for 2022, first year using new query. Keep for records in case of changes
+#AKFIN_2022 <- read_csv(paste(getwd(),"/Data/Annual_updates/",AYR,"/confidential Groundfish Total Catch by Fishery_AKFIN2022.csv",sep="")) %>% 
+#  clean_names() %>% 
+#  group_by(year, fmp_area, nmfs_area, trip_target_name, gear, species) %>% 
+#  summarise(AKFIN_catch = sum(catch_mt)) %>% 
+#  mutate(species2 = if_else(species == "\"shark, spiny dogfish\"", "Spiny Dogfish",
+#                           if_else(species == "\"Pacific sleeper shark\"", "Pacific Sleeper Shark",
+#                                   if_else(species == "\"shark, salmon\"", "Salmon Shark", 'Other Sharks')))) %>% 
+#  select(-species) %>% 
+#  rename(species = species2)
 
-Ca<-ddply(catchdat,c("Year","FMP.Area","NMFS.Area","Trip.Target.Name","Gear","Species"),summarize,NEW_Catch=sum(Catch..mt.))
+#NEW <- CASdat %>% 
+#  group_by(year, fmp_area, reporting_area_code, trip_target_name, agency_gear_code, species) %>% 
+#  summarise(CODE_catch = sum(catch_mt)) %>% 
+#  rename(nmfs_area = reporting_area_code,
+#         gear = agency_gear_code) %>% 
+#  filter(year > 2009 & year < 2021)
 
-CAS_test<-merge(Cl,Ca)
-CAS_test$diff<-CAS_test$NEW_Catch-CAS_test$OLD_Catch
-CAS_test$pdiff<-round(((CAS_test$NEW_Catch-CAS_test$OLD_Catch)/CAS_test$OLD_Catch)*100,2)
+#testcode <- NEW %>% 
+#  left_join(AKFIN_2022) %>% 
+#  mutate(diff = CODE_catch - AKFIN_catch,
+#         pdiff = abs(round(((CODE_catch - AKFIN_catch)/AKFIN_catch)*100,2)))
+#max(testcode$pdiff)
 
-CAS_diff<-CAS_test[CAS_test$diff>1&CAS_test$Year<2018,]
-write.csv(CAS_diff,paste(outdir,"/SAFE_Sharks_CAS_diffs.csv",sep=""),row.names=F)
+#write_csv(testcode, paste(outpath,"/CODEvAKFIN_CAS_comparison.csv",sep=""))
+
+
+# Examine if changes to CAS data, 
+# Coded for 2022 because first year of code based query, future iterations will be automated
+
+CAS_layr<-read_csv(paste(getwd(),"/Data/Annual_updates/",LAYR,"/confidential_Groundfish Total Catch by Fishery_shark2020_Sept.csv",sep="")) %>% 
+  clean_names() %>% 
+  group_by(year, fmp_area, nmfs_area, trip_target_name, gear, species) %>% 
+  summarise(OLD_catch = sum(catch_mt)) %>% 
+  filter(year > 2009)
+
+CAS_2022 <- read_csv(paste(getwd(),"/Data/Annual_updates/",AYR,"/confidential Groundfish Total Catch by Fishery_AKFIN2022.csv",sep="")) %>% 
+  clean_names() %>% 
+  group_by(year, fmp_area, nmfs_area, trip_target_name, gear, species) %>% 
+  summarise(NEW_catch = sum(catch_mt))
+CAS_comp <- CAS_layr %>% 
+  left_join(CAS_2022) %>% 
+  mutate(diff = NEW_catch - OLD_catch,
+         pdiff = abs(round(((NEW_catch - OLD_catch)/OLD_catch)*100,2))) %>% 
+  filter(diff > 5 | is.na(diff))
+
+write_csv(CAS_comp,paste(outpath,"/CAS_changes_sharks.csv",sep=""))
+
+# check for differences between last assessment year and this assessment year.....has CAS changed anything?
+CAS_layr<-read_csv(paste(getwd(),"/Data/Cleaned/",LAYR,"/confidential_CAS_GFTBF_Sharks",LAYR,".csv",sep="")) %>% 
+  clean_names() %>% 
+  group_by(year, fmp_area, nmfs_area, trip_target_name, gear, species) %>% 
+  summarise(OLD_catch = sum(catch_mt))
+CAS_ayr <- CASdat %>% 
+  rename(nmfs_area = reporting_area_code,
+         gear = agency_gear_code,
+         trip_target_name = trip_target) %>% 
+  group_by(year, fmp_area, nmfs_area, trip_target_name, gear, species) %>%
+  summarise(NEW_catch = sum(catch_mt)) %>% 
+  left_join(CAS_layr) %>% 
+  mutate(diff = NEW_catch - OLD_catch,
+         pdiff = abs(round(((NEW_catch - OLD_catch)/OLD_catch)*100,2))) %>% 
+  filter(abs(diff) > 1 & year < AYR)
+
+write_csv(CAS_ayr,paste(outpath,"/SAFE_Sharks_CAS_diffs.csv",sep=""))
 
 Clsimple<-ddply(CAS_layr,c("Year","FMP.Area"),summarize,OLD_Catch=sum(Catch..mt.))
 Casimple<-ddply(catchdat,c("Year","FMP.Area"),summarize,NEW_Catch=sum(Catch..mt.))
@@ -105,26 +171,27 @@ CAS_sdiff<-CAS_simple[CAS_simple$diff>1&CAS_simple$Year<2018,]
 write.csv(CAS_sdiff,paste(outdir,"/SAFE_Sharks_CAS_simplified_diffs.csv",sep=""),row.names=F)
 
 #Lets see if what I pulled in Sept is diff from Oct
-sept<-read.csv(paste(outdir,"/CAS_GFTBF_Sharks_Sept.csv",sep=""),header = T)
-septa<-ddply(sept,c("Year","FMP.Area","NMFS.Area","Trip.Target.Name","Gear","Species"),summarize,Sept_Catch=sum(Catch..mt.))
+#sept<-read.csv(paste(outdir,"/CAS_GFTBF_Sharks_Sept.csv",sep=""),header = T)
+#septa<-ddply(sept,c("Year","FMP.Area","NMFS.Area","Trip.Target.Name","Gear","Species"),summarize,Sept_Catch=sum(Catch..mt.))
 
-Ca<-ddply(catchdat,c("Year","FMP.Area","NMFS.Area","Trip.Target.Name","Gear","Species"),summarize,NEW_Catch=sum(Catch..mt.))
-sept_test<-merge(septa,Ca)
-sept_test$diff<-sept_test$NEW_Catch-sept_test$Sept_Catch
-sept_test$pdiff<-round((sept_test$diff/sept_test$Sept_Catch)*100,2)
-sept_diff<-sept_test[sept_test$diff>1&sept_test$Year<2020,]
+#Ca<-ddply(catchdat,c("Year","FMP.Area","NMFS.Area","Trip.Target.Name","Gear","Species"),summarize,NEW_Catch=sum(Catch..mt.))
+#sept_test<-merge(septa,Ca)
+#sept_test$diff<-sept_test$NEW_Catch-sept_test$Sept_Catch
+#sept_test$pdiff<-round((sept_test$diff/sept_test$Sept_Catch)*100,2)
+#sept_diff<-sept_test[sept_test$diff>1&sept_test$Year<2020,]
 
-write.csv(sept_diff,paste(outdir,"/2020datapulls_sharks.csv",sep=""),row.names=F)
+#write.csv(sept_diff,paste(outdir,"/2020datapulls_sharks.csv",sep=""),row.names=F)
 
-septsimple<-ddply(sept,c("Year","FMP.Area"),summarize,OLD_Catch=sum(Catch..mt.))
-sept2simple<-ddply(catchdat,c("Year","FMP.Area"),summarize,NEW_Catch=sum(Catch..mt.))
-sept_simple<-merge(septsimple,sept2simple)
-sept_simple$diff<-sept_simple$NEW_Catch-sept_simple$OLD_Catch
-sept_simple$pdiff<-round(((sept_simple$NEW_Catch-sept_simple$OLD_Catch)/sept_simple$OLD_Catch)*100,2)
-sept_sdiff<-sept_simple[sept_simple$diff>1&sept_simple$Year<2018,]
-write.csv(CAS_sdiff,paste(outdir,"/2020datapulls_sharkssimplified.csv",sep=""),row.names=F)
+#septsimple<-ddply(sept,c("Year","FMP.Area"),summarize,OLD_Catch=sum(Catch..mt.))
+#sept2simple<-ddply(catchdat,c("Year","FMP.Area"),summarize,NEW_Catch=sum(Catch..mt.))
+#sept_simple<-merge(septsimple,sept2simple)
+#sept_simple$diff<-sept_simple$NEW_Catch-sept_simple$OLD_Catch
+#sept_simple$pdiff<-round(((sept_simple$NEW_Catch-sept_simple$OLD_Catch)/sept_simple$OLD_Catch)*100,2)
+#sept_sdiff<-sept_simple[sept_simple$diff>1&sept_simple$Year<2018,]
+#write.csv(CAS_sdiff,paste(outdir,"/2020datapulls_sharkssimplified.csv",sep=""),row.names=F)
 
 # Noncommercial Catch ----
+# need to build the query for this still
 old_nc<-read.csv(paste(getwd(),"/Data/Static/Non_comm_catchpre2010.csv",sep=""),header=T)
 colnames(old_nc)<-c("Year","Source","AFSC_TWLt","AFSC_LLn","AFSC_LLt",
                     "IPHC_LLn","IPHC_LLt","ADFG_t","FMP")

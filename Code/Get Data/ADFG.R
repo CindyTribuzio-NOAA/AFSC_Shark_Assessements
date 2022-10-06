@@ -8,7 +8,7 @@ outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
 oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 
 # SEAK LL Survey ----
-# Contact Rhea Erhsmann, 25_9_2020
+# Contacted Rhea Eresmann Oct 4 2022
 
 # Retrieve Data
 # old data
@@ -39,6 +39,7 @@ write.csv(ADFGSEAKLL,paste(outdir,"/ADFG_SEAK_LL",AYR,".csv",sep=""),row.names =
 
 #Kamishak Bay Trawl survey ----
 #Data from M Byerly 13_10_2020
+#As per email from M Byerly Oct 6 2022 no new data for these surveys
 
 adfg_twl_dat<-read.csv(paste(datadir,"/ADFG LgMesh shark catch 1997to2019.csv",sep=""), header=T)
 
@@ -88,6 +89,7 @@ write.csv(TWL_new,paste(outdir,"/ADFG_LRGTWL",AYR,".csv",sep=""),row.names=F)
 # Contact: cindy.tribuzio@noaa.gov
 # Last Updated: 20_10_2020
 # data provided by Sarah Webster
+# updated data expected 10/14/2022 as per email Oct 4 2022
 
 # Setup ----
 datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
