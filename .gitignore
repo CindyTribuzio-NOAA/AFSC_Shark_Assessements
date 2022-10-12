@@ -22,6 +22,7 @@ Outside_Analyses/
 # large files
 *RACE_CATCH*
 *RACE_HAUL*
+*IPHC_FISS_survey*
 
 # Don't track data
 *.xlsx
