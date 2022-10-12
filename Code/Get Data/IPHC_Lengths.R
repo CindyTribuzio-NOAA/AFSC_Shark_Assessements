@@ -1,7 +1,7 @@
 # Compile new IPHC length data ----
 # for spiny dogfish length comps
 # Contact: cindy.tribuzio@noaa.gov
-# Last Updated: 5_10_2020
+# Last Updated: 11_Oct_2022
 
 # Setup ----
 datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
@@ -9,10 +9,13 @@ outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
 oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 
 # Retrieve Data ----
-olddat<-read_csv(paste(olddir,"/IPHC_dogfish_lengths",LAYR,".csv",sep="")) %>% 
+olddat<-read_csv(paste(oldpath,"/IPHC_dogfish_lengths",LAYR,".csv",sep="")) %>% 
   clean_names()
 
-newdat<-read_csv(paste(datadir,"/IPHC Dogfish Data ", AYR, ".csv",sep="")) %>% 
+#until these data get cleaned and input into AKFIN, have to deal with excel file and changing formats from year to year
+#2022: download file: IPHC-2022-FISS-NOAA AFSC-001.xlsx, change name to IPHC-2022-FISS-NOAA-AFSC-LENGTH.xlsx
+#Open .xlsx and save spiny dogfish tab as .csv, probably need to delete blank row at top
+newdat<-read_csv(paste(datapath,"/IPHC Dogfish Data ", AYR, ".csv",sep="")) %>% 
   clean_names
   
 
@@ -36,10 +39,12 @@ alldat<-newdat %>%
 
 # Add in FMP ----
 # this borrows station/FMP info from RPN work. Bring over RPN output to inform this
-# "final_iphc_survey_1998_20XX.csv
 
-Surveydat<-read_csv(paste(outdir,"/final_iphc_survey_1998_",AYR,".csv",sep="")) %>% 
-  clean_names()
+
+Surveydat<-read_csv(paste(outpath,"/IPHC_FISS_survey_",AYR-1,".csv",sep="")) %>% 
+  clean_names() %>% 
+  rename(year = survey_year,
+         fmp = fmp_area)
 station<-unique(Surveydat[,c("year","station","fmp")])
 rm(Surveydat)
 
@@ -85,4 +90,4 @@ nadat<-lengthdat[is.na(lengthdat$fmp),]
 nrow(nadat) #need to get this to zero
 
 #export data
-write.csv(lengthdat,paste(outdir,"/IPHC_dogfish_lengths",AYR,".csv",sep=""),row.names =F)
+write.csv(lengthdat,paste(outpath,"/IPHC_dogfish_lengths",AYR,".csv",sep=""),row.names =F)

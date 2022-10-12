@@ -3,11 +3,6 @@
 # Contact: cindy.tribuzio@noaa.gov
 
 # Set up ----
-
-libs <- c("tidyverse", "RODBC", "lubridate", "janitor", "odbc", "DBI")
-if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
-lapply(libs, library, character.only = TRUE)
-
 dbname <- "akfin"
 db <- read_csv('database.csv')
 database_akfin=db %>% filter(database == dbname) %>% select(database) #need to add filter for AKFIN user/pass only
@@ -37,12 +32,12 @@ sharkCPUE <- sqlQuery(channel_akfin, query = ("
   clean_names() 
 
 # Raw Survey Data (if needed)
-#IPHC_raw <- sqlQuery(channel_akfin, query = ("
-#                select    *
-#                from      iphc.fiss_set_p_halb")) %>% 
-#  clean_names() 
+IPHC_raw <- sqlQuery(channel_akfin, query = ("
+                select    *
+                from      afsc_host.fiss_cleaned")) %>% 
+  clean_names() 
 
 # Save Survey Indices ----
 write_csv(sharkRPN, paste(outpath, "/IPHC_RPN_sharks_2021.csv", sep = ""))
 write_csv(sharkCPUE, paste(outpath, "/IPHC_CPUE_sharks_2021.csv", sep = ""))
-write_csv(IPHC_raw, paste(outpath, "/IPHC_FISS_raw_2021.csv", sep = ""))
+write_csv(IPHC_raw, paste(outpath, "/IPHC_FISS_survey_2021.csv", sep = ""))

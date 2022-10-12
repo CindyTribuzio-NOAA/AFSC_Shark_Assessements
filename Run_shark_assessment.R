@@ -7,7 +7,8 @@
 # 2) fix all outputs to append year to end of file name
 
 # Setup ----
-libs <- c("tidyverse", "janitor", "Hmisc", "RColorBrewer", "gridExtra", "gtable", "grid", "flextable", "officer", "lubridate", "RODBC")
+libs <- c("tidyverse", "janitor", "Hmisc", "RColorBrewer", "gridExtra", "gtable", 
+          "grid", "flextable", "officer", "lubridate", "RODBC", "DBI")
 if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {
   install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
 lapply(libs, library, character.only = TRUE)
@@ -34,22 +35,26 @@ source(paste(getwd(),"/Code/Get Data/AFSC_LL_RPNs.R",sep=""))
 source(paste(getwd(),"/Code/Get Data/IPHC_FISS_Indices.R",sep=""))
 
 # IPHC Spiny Dogfish Lengths
-# as of 10/4/2022 still waiting for updated length data, code has not been updated
+# this has to be done before all the survey lengths can be done
 source(paste(getwd(),"/Code/Get Data/IPHC_Lengths.R",sep=""))
 
 # Survey length data
 source(paste(getwd(),"/Code/Get Data/Survey_Length_Frequency.R",sep=""))
 
+# AKRO CAS
+source(paste(getwd(),"/Code/Get Data/AKRO_CAS_DATA.R",sep=""))
+
 # ADFG
 # contact ADFG for data files, see notes in code for last contact
-# code still needs to be updated for 2022
-
-# AKRO CAS
-
+# this code will likely need annual attention
+source(paste(getwd(),"/Code/Get Data/ADFG.R",sep=""))
 
 # RACE Biomass ----
+# this is redundant and archaic, only needed for 2022 for bridging, Future will use rema package
+
 
 # RFX ----
+# this is redundant and archaic, only needed for 2022 for bridging, Future will use rema package
 
 # Harvest Specs ----
 

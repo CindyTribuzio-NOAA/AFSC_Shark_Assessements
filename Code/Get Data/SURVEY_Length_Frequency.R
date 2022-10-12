@@ -4,10 +4,6 @@
 # Last Updated: Sept 2022
 
 # Setup ----
-libs <- c("tidyverse", "RODBC", "lubridate", "janitor", "odbc", "DBI")
-if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
-lapply(libs, library, character.only = TRUE)
-
 dbname <- "akfin"
 db <- read_csv('database.csv')
 database_akfin=db %>% filter(database == dbname) %>% select(database) #need to add filter for AKFIN user/pass only
@@ -133,31 +129,23 @@ AFSCTWL_freq <- SSTWL_dat %>%  bind_rows(SDTWL_dat) %>% select(!Length)
 
 
 #IPHC data
-#need to get new data each year from IPHC and add in FMP, this is not automated yet
-#2019 data are not yet available, when/if this data stream continues, add to data retrieval/processing codes
+# See IPHC_Lengths.R for data prep code
 # Lengths are PCL
-IPHC_dat<-read.csv(paste(outpath,"/IPHC_dogfish_lengths", AYR,".csv",sep=""), header=T) 
-
-levels(IPHC_dat$FMP)[levels(IPHC_dat$FMP)=="WA"]<-"WC"
-levels(IPHC_dat$FMP)[levels(IPHC_dat$FMP)=="WAOR"]<-"WC"
-levels(IPHC_dat$FMP)[levels(IPHC_dat$FMP)=="ORCA"]<-"WC"
-
-IPHC_dat<-IPHC_dat[IPHC_dat$Sex!="U",] #takes out the unknown sex
-
-#round all lengths down to nearest 5
-IPHC_dat$binL<-floor(IPHC_dat$Length/5)*5 #rounds everything down to the next 5 (i.e. 40,45...)
-IPHC_dat$binL[IPHC_dat$binL>plus]<-plus #turns everything over 90 to 90, 90 is the plus group
-IPHC_dat$binL[IPHC_dat$binL<minus]<-minus
-
-IPHC_size <- IPHC_dat %>% 
-  select(Year, FMP, Length, Sex) %>% 
-  mutate(Source = "IPHCLL",
-         Species = 310)
+IPHC_size<-read.csv(paste(outpath,"/IPHC_dogfish_lengths", AYR,".csv",sep=""), header=T) %>%
+  clean_names() %>% 
+  filter(sex != "U") %>% #get rid of uknown sexes, not too many of them
+  mutate(binL = floor(length/5)*5,
+         binL = if_else(binL > Lgroups[Lgroups$species_code == 310, 'plus'], Lgroups[Lgroups$species_code == 310, 'plus'],
+                        if_else(binL < Lgroups[Lgroups$species_code == 310, 'minus'], Lgroups[Lgroups$species_code == 310, 'minus'], binL)),
+         Source = "IPHCLL",
+         species = 310) %>% 
+  select(year, fmp, length, sex, binL)
 
 
-IPHC_freq<- IPHC_dat %>% 
-  group_by(Year, FMP, binL, Sex) %>% 
-  summarize(Frequency = length(length)) %>% 
+
+IPHC_freq<- IPHC_size %>% 
+  group_by(year, fmp, binL, sex) %>% 
+  summarise(Frequency = length(length)) %>% 
   mutate(Source = "IPHCLL",
          Species = 310)
 

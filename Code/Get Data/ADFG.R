@@ -11,37 +11,40 @@ oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 # Contacted Rhea Eresmann Oct 4 2022
 
 # Retrieve Data
-# old data
-ADFG_old<-read.csv(paste(olddir,"/ADFG_SEAK_LL",LAYR,".csv",sep=""),header=T)
+# old data, anything prior to 2019 is no longer updated
+ADFG_old<-read_csv(paste0(oldpath,"/ADFG_SEAK_LL",LAYR,".csv"))
 
-ADFG_update<-read.csv(paste(datadir,"/ADFG NSEI and SSEI LL Survey Data",AYR,".csv",sep=""),header=T)
-# turn all nas to zeros
-ADFG_update[is.na(ADFG_update)]<-0
-up<-ADFG_update[,c("Year","Project","Station.No","Trip.No","Set.No","Start.Latitude.Decimal.Degrees",
-                   "Start.Longitude.Decimal.Degree","Avg.Depth.Fathoms","Hooks...Total.Number","Hooks...Number.with.Bait",
-                   "Hooks...Number.Bare","Hooks...Number.Invalid","Sablefish","Dogfish","Sleeper.Shark")]
+ADFG_update<-read_csv(paste0(datapath,"/ADFG NSEI and SSEI LL Survey Data",AYR,".csv")) %>% 
+  clean_names() %>% 
+  select(year, project, station_no, trip_no, set_no, start_latitude_decimal_degrees, start_longitude_decimal_degree, 
+         avg_depth_fathoms, hooks_total_number, hooks_number_with_bait, hooks_number_bare, hooks_number_invalid,
+         sablefish, dogfish, sleeper_shark) %>% 
+  group_by(year, project, station_no, trip_no, set_no, start_latitude_decimal_degrees, start_longitude_decimal_degree, 
+           avg_depth_fathoms) %>% 
+  summarise(hks_tot = sum(hooks_total_number),
+            hks_bait = sum(hooks_number_with_bait),
+            hks_bare = sum(hooks_number_bare),
+            hks_ineff = sum(hooks_number_invalid),
+            sable_tot = sum(sablefish),
+            df_tot = sum(dogfish),
+            pss_tot = sum(sleeper_shark))
 
-up3<-ddply(up,c("Year","Project","Station.No","Trip.No","Set.No","Start.Latitude.Decimal.Degrees",
-                "Start.Longitude.Decimal.Degree","Avg.Depth.Fathoms"),summarize,
-          HKS_tot=sum(Hooks...Total.Number),
-          HKS_bait=sum(Hooks...Number.with.Bait),
-          HKS_bare=sum(Hooks...Number.Bare),
-          HKS_ineff=sum(Hooks...Number.Invalid),
-          Sable_Tot=sum(Sablefish),
-          DF_Tot=sum(Dogfish),
-          PSS_Tot=sum(Sleeper.Shark))
+colnames(ADFG_update)<-colnames(ADFG_old)
 
-colnames(up3)<-colnames(ADFG_old)
+#filter out 2019 - present from "old" dataset
+minyr <- min(ADFG_update$Year)
+ADFG_old <- ADFG_old %>% filter(Year < minyr)
 
 #combine for complete dataset
-ADFGSEAKLL<-rbind(ADFG_old,up3)
-write.csv(ADFGSEAKLL,paste(outdir,"/ADFG_SEAK_LL",AYR,".csv",sep=""),row.names = F)
+ADFGSEAKLL<-rbind(ADFG_old, ADFG_update)
+write_csv(ADFGSEAKLL,paste(outpath,"/ADFG_SEAK_LL",AYR,".csv",sep=""))
 
 #Kamishak Bay Trawl survey ----
 #Data from M Byerly 13_10_2020
-#As per email from M Byerly Oct 6 2022 no new data for these surveys
+#As per email from M Byerly Oct 6 2022 no new data for these surveys, copied previous file to 2022 folder
+# code still needs to be updated to dplyr
 
-adfg_twl_dat<-read.csv(paste(datadir,"/ADFG LgMesh shark catch 1997to2019.csv",sep=""), header=T)
+adfg_twl_dat<-read_csv(paste0(datapath,"/ADFG LgMesh shark catch 1997to2019.csv"))
 
 mdat<-melt(adfg_twl_dat,c("year","proj","n","species"))
 mdat[grep("691", mdat$species), "species"] <- "Spiny Dogfish"
@@ -87,44 +90,68 @@ write.csv(TWL_new,paste(outdir,"/ADFG_LRGTWL",AYR,".csv",sep=""),row.names=F)
 
 # ADFG SWHS catch ----
 # Contact: cindy.tribuzio@noaa.gov
-# Last Updated: 20_10_2020
+# Last Updated: 11 Oct 2022
 # data provided by Sarah Webster
-# updated data expected 10/14/2022 as per email Oct 4 2022
 
 # Setup ----
-datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
-oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
+#datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
+#outpath<-paste(getwd(),"/Data/Cleaned/",AYR,sep="")
+#oldpath<-paste(getwd(),"/Data/Cleaned/",LAYR,sep="")
 
 # Get Data ----
-# NOTE: these data are formatted horribly when they come in, takes a lot of massaging to make it nice
-ADFG<-read.csv(paste(datadir,"/ADFG_shark_harvest_",AYR,".csv",sep=""),header=T,skip=5)
+# NOTE: these data are formatted horribly when they come in, takes a lot of massaging to make it nice.
+# Comes in as an .xlsx, save as .csv first
+ADFG_sport<-read_csv(paste0(datapath,"/ADFG_shark_harvest_",AYR-1,".csv"),skip=5) %>%  clean_names()
 sptyear<-AYR-1998
 ssyear<-sptyear+7
-sport<-ADFG[1:sptyear,]
-Sshark<-ADFG[ssyear:(ssyear+nyear-1),]
+nyear <- AYR - 1998
+sport<-ADFG_sport[1:sptyear,]
+Sshark<-ADFG_sport[ssyear:(ssyear+nyear-1),]
 
 #all sharks
-harvest<-sport[,c("Year","Western","Central","Eastern")]
-harvest$Central<-as.numeric(gsub(",","",harvest$Central))
-harvest$Western<-as.numeric(gsub(",","",harvest$Western))
-harvest$Eastern<-as.numeric(gsub(",","",harvest$Eastern))
-h2<-melt(harvest,id.vars="Year")
-h2$Type<-"Retained"
-h2$Species<-"All Sharks"
-colnames(h2)<-c("Year","NMFS_Area","Nfish","Type","Species")
+harvest <- sport %>% 
+  select(year_1, western_2, central_3, eastern_4) %>% 
+  rename(year = year_1, 
+         wgoa = western_2,
+         cgoa = central_3,
+         egoa = eastern_4) %>% 
+  mutate(year = as.numeric(year),
+         wgoa = as.numeric(gsub(",","", wgoa)),
+         cgoa = as.numeric(gsub(",","", cgoa)),
+         egoa = as.numeric(gsub(",","", egoa))) %>% 
+  pivot_longer(!year, names_to = "NMFS_Area", values_to = "Nfish") %>% 
+  mutate(Type = "Retained",
+         Species = "All Sharks")
 
-discard<-sport[,c("Year","Western.3","Central.3","Eastern.3")]
-colnames(discard)<-c("Year","Western","Central","Eastern")
-discard$Central<-as.numeric(gsub(",","",discard$Central))
-discard$Western<-as.numeric(gsub(",","",discard$Western))
-discard$Eastern<-as.numeric(gsub(",","",discard$Eastern))
-d2<-melt(discard,id.vars="Year")
-d2$Type<-"Discarded"
-d2$Species<-"All Sharks"
-colnames(d2)<-c("Year","NMFS_Area","Nfish","Type","Species")
+discard <- sport %>% 
+  select(year_1, western_15, central_16, eastern_17) %>% 
+  rename(year = year_1, 
+         wgoa = western_15,
+         cgoa = central_16,
+         egoa = eastern_17) %>% 
+  mutate(year = as.numeric(year),
+         wgoa = as.numeric(gsub(",","", wgoa)),
+         cgoa = as.numeric(gsub(",","", cgoa)),
+         egoa = as.numeric(gsub(",","", egoa))) %>% 
+  pivot_longer(!year, names_to = "NMFS_Area", values_to = "Nfish") %>% 
+  mutate(Type = "Discarded",
+         Species = "All Sharks")
 
 #salmon shark charter
+salshark <- Sshark %>% 
+  select(year_1, western_2, central_3, eastern_4) %>% 
+  rename(year = year_1, 
+         wgoa = western_2,
+         cgoa = central_3,
+         egoa = eastern_4) %>% 
+  mutate(year = as.numeric(year),
+         wgoa = as.numeric(gsub(",","", wgoa)),
+         cgoa = as.numeric(gsub(",","", cgoa)),
+         egoa = as.numeric(gsub(",","", egoa))) %>% 
+  pivot_longer(!year, names_to = "NMFS_Area", values_to = "Nfish") %>% 
+  mutate(Type = "Retained",
+         Species = "Salmon Shark")
+
 sshark<-Sshark[,c("Year","Western","Central","Eastern")]
 sshark[sshark$Year==1999,2:4]<-NA
 sshark$Central<-as.numeric(gsub(",","",sshark$Central))
@@ -135,5 +162,5 @@ s2$Type<-"Retained"
 s2$Species<-"Salmon Shark"
 colnames(s2)<-c("Year","NMFS_Area","Nfish","Type","Species")
 
-sport2<-rbind(h2,d2,s2)
-write.csv(sport2,paste(outdir,"/ADFG_sportharvest",AYR,".csv",sep=""),row.names=F)
+sport2<-rbind(harvest, discard, salshark)
+write.csv(sport2,paste(outpath,"/ADFG_sportharvest",AYR,".csv",sep=""),row.names=F)

@@ -1,10 +1,10 @@
 #AKRO CAS Data ----
-#Updated 9/24/2020 by C. Tribuzio
+#Updated 10/6/2022 by C. Tribuzio
 #This code will pull the data from AKFIN and clean it up for use in the assessment
 
 
 # Still to do list ----
-##1) auto query from AKFIN 
+
 
 # Setup ----
 datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
@@ -142,7 +142,7 @@ CAS_comp <- CAS_layr %>%
          pdiff = abs(round(((NEW_catch - OLD_catch)/OLD_catch)*100,2))) %>% 
   filter(diff > 5 | is.na(diff))
 
-write_csv(CAS_comp,paste(outpath,"/CAS_changes_sharks.csv",sep=""))
+write_csv(CAS_comp,paste(outpath,"/confidential_CAS_changes_sharks.csv",sep=""))
 
 # check for differences between last assessment year and this assessment year.....has CAS changed anything?
 CAS_layr<-read_csv(paste(getwd(),"/Data/Cleaned/",LAYR,"/confidential_CAS_GFTBF_Sharks",LAYR,".csv",sep="")) %>% 
@@ -160,7 +160,7 @@ CAS_ayr <- CASdat %>%
          pdiff = abs(round(((NEW_catch - OLD_catch)/OLD_catch)*100,2))) %>% 
   filter(abs(diff) > 1 & year < AYR)
 
-write_csv(CAS_ayr,paste(outpath,"/SAFE_Sharks_CAS_diffs.csv",sep=""))
+write_csv(CAS_ayr,paste(outpath,"/confidential_SAFE_Sharks_CAS_diffs.csv",sep=""))
 
 Clsimple<-ddply(CAS_layr,c("Year","FMP.Area"),summarize,OLD_Catch=sum(Catch..mt.))
 Casimple<-ddply(catchdat,c("Year","FMP.Area"),summarize,NEW_Catch=sum(Catch..mt.))
