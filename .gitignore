@@ -24,6 +24,7 @@ Outside_Analyses/
 *RACE_HAUL*
 *IPHC_FISS_survey*
 *IPHC_FISS_raw*
+*trackoff*
 
 # Don't track data
 *.xlsx

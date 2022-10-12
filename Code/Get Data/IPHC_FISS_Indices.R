@@ -38,6 +38,6 @@ IPHC_raw <- sqlQuery(channel_akfin, query = ("
   clean_names() 
 
 # Save Survey Indices ----
-write_csv(sharkRPN, paste(outpath, "/IPHC_RPN_sharks_2021.csv", sep = ""))
-write_csv(sharkCPUE, paste(outpath, "/IPHC_CPUE_sharks_2021.csv", sep = ""))
-write_csv(IPHC_raw, paste(outpath, "/IPHC_FISS_survey_2021.csv", sep = ""))
+write_csv(sharkRPN, paste0(outpath, "/IPHC_RPN_sharks_", AYR-1, ".csv"))
+write_csv(sharkCPUE, paste0(outpath, "/IPHC_CPUE_sharks_", AYR-1, ".csv"))
+write_csv(IPHC_raw, paste0(outpath, "/IPHC_FISS_survey_", AYR-1, "_trackoff.csv", sep = "")) #add "trackoff" so large file size isn't tracked
