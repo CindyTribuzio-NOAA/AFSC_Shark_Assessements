@@ -3,28 +3,18 @@
 #This function will estimate biomass for all surveys and sub-regions
 #I have not yet built in the flexibility to do separate depths
 
-# Still to do list ----
-##1)download directly from AKFIN
-##2)add in depth flexibility
-
-# Packages ----
-library(plyr) 
-library(reshape2)
-library(dplyr)
-
-'%nin%'<-Negate('%in%')
 
 # Biomass Function ----
 #Biomass estimation function, includes formatting data from AKFIN
 #Estimates biomass for each of the species/species groups provided
-RACE_BIOMASS<-function(Species,outname,SYR,datadir,outdir){
+RACE_BIOMASS<-function(Species,outname,SYR,datapath,outpath){
   
   # Data prep ----
   print("Importing and formating data")
   print("Have patience, you must. Large this data file is.")
   
   #RACE haul data
-  HAUL<-read.csv(paste(datadir,"/RACE_HAUL",SYR,".csv",sep=""),header=T)
+  HAUL<-read.csv(paste(datapath,"/RACE_HAUL",SYR,".csv",sep=""),header=T)
   HAUL<-HAUL[,-c(1:2)]
   colnames(HAUL)<-c("SURVEY","YEAR","VESSEL","CRUISE","HAUL","HAULJOIN","STRATUM","INPFC","REG_AREA","STRATUM_DESC","HAUL_TYPE","PERFORMANCE",
                     "START_TIME","DURATION","DISTANCE_FISHED","NET_WIDTH","NET_MEASURED","NET_HEIGHT","START_LATITUDE","START_LONGITUDE",
@@ -41,13 +31,13 @@ RACE_BIOMASS<-function(Species,outname,SYR,datadir,outdir){
   #see emails with Wayne Palsson 8/26/2020 title RACE Haul Counts
   
   #RACE stratum information
-  STRATUM<-read.csv(paste(datadir,"/RACE_STRATUM",SYR,".csv",sep=""),header=T)
+  STRATUM<-read.csv(paste(datapath,"/RACE_STRATUM",SYR,".csv",sep=""),header=T)
   STRATUM<-STRATUM[,-c(1:2)]
   colnames(STRATUM)<-c("SURVEY","STRATUM","AREA","PERIMETER","INPFC_AREA","MIN_DEPTH","MAX_DEPTH","DESCRIPTION","SUMMARY_AREA","SUMMARY_DEPTH",
                        "SUMMARY_AREA_DEPTH","REGULATORY_AREA_NAME","STRATUM_TYPE")  
   
   #RACE catch
-  CATCH<-read.csv(paste(datadir,"/RACE_CATCH",SYR,".csv",sep=""),header=T,skip=6)
+  CATCH<-read.csv(paste(datapath,"/RACE_CATCH",SYR,".csv",sep=""),header=T,skip=6)
   CATCH<-CATCH[,-ncol(CATCH)]
   colnames(CATCH)<-c("SURVEY","YEAR","CRUISEJOIN","HAULJOIN","CATCHJOIN","CRUISE","VESSEL","HAUL","START_LATITUDE","START_LONGITUDE",
                      "END_LATITUDE","END_LONGITUDE","STRATUM","INPFC","MIN_DEPTH","MAX_DEPTH","DESCRIPTION","REGULATORY_AREA_NAME",
@@ -61,7 +51,7 @@ RACE_BIOMASS<-function(Species,outname,SYR,datadir,outdir){
   CATCH$WEIGHT<-as.numeric(as.character(CATCH$WEIGHT))
   
   #RACE surveys
-  SURVEYS<-read.csv(paste(datadir,"/RACE_SURVEYS",SYR,".csv",sep=""),header=T)
+  SURVEYS<-read.csv(paste(datapath,"/RACE_SURVEYS",SYR,".csv",sep=""),header=T)
   SURVEYS<-SURVEYS[,-c(1:2)]
   colnames(SURVEYS)<-c("SURVEY","VESSEL","CRUISE","START_DATE","END_DATE","MIN_LATITUDE","MAX_LATITUDE", 
                        "MIN_LONGITUDE","MAX_LONGITUDE","AGENCY_NAME","SURVEY_NAME","YEAR","CRUISEJOIN")  
@@ -109,7 +99,7 @@ RACE_BIOMASS<-function(Species,outname,SYR,datadir,outdir){
     ### Get an object with all hauljoins, but no duplicates
     temp2<-temp[!duplicated(temp$HAULJOIN),] #should this just be a list of unique hauljoins then?  temp2<-unique(temp$HAULJOIN)
     ### Calculated combined catch for multiple species
-    cpue<-catch2[catch2$SPECIES_CODE%in%spec,] #these steps create a dummy species that can be used to sum over
+    cpue<-catch2[catch2$SPECIES_CODE %in% spec,] #these steps create a dummy species that can be used to sum over
     cpue<-cpue[complete.cases(cpue),]
     ### sum up catch across all species in a group for each haul
     sumcatch<-as.matrix(tapply(cpue$WEIGHT,cpue$HAULJOIN,sum)) 
@@ -208,5 +198,5 @@ RACE_BIOMASS<-function(Species,outname,SYR,datadir,outdir){
   #e.g., EGOA in 2001
   loopmat[!(is.na(loopmat$Biomass))& loopmat$Biomass==0,]$CV <- 0
   loopmat[!(is.na(loopmat$Biomass))& loopmat$Biomass==0,]$CATCH_COUNT <- 0
-  write.csv(loopmat,paste(outdir,"/RACE_Biomass_",outname,".csv",sep=""),row.names=F)
+  write.csv(loopmat,paste(outpath,"RACE_Biomass_",outname,".csv",sep=""),row.names=F)
 }

@@ -8,10 +8,9 @@
 codedir<-datadir<-paste(getwd(),"/Code/RACE_Biomass/",sep="")
 source(paste(codedir,"RACE_biomass_functions.R",sep=""))
 
-SYR<-2019 #survey year
-AYR<-2020 #assessment year
-datadir<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
-outdir<-paste(getwd(),"/Output/",AYR,"/RACE_Biomass/",sep="")
+datapath<-paste(getwd(),"/Data/Annual_updates/",AYR,sep="")
+outpath<-paste(getwd(),"/Output/",AYR,"/RACE_Biomass/",sep="")
+dir.create(outpath)
 
 # Set up biomass groups ----
 #makes a nested list that the biomass for loop will run through
@@ -26,9 +25,9 @@ bgroups<-list("species"=list(spec1=310,
                     out4="Sharks",
                     out5="PSS_SD"))
 
-RACE_BIOMASS(Species=bgroups,outname="Sharks",SYR=SYR,datadir=datadir,outdir=outdir)
+RACE_BIOMASS(Species=bgroups,outname="Sharks",SYR=SYR,datapath=datapath,outpath=outpath)
 
 # Biomass by species ----
 #when run separately like this, it can take a lot of time because each run reloads the data
-RACE_BIOMASS(Species=310,outname="Spiny_Dogfish",SYR=SYR,datadir=datadir,outdir=outdir)
+RACE_BIOMASS(Species=310,outname="Spiny_Dogfish",SYR=SYR,datapath=datapath,outpath=outpath)
 

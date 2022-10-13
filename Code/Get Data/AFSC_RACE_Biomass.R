@@ -3,10 +3,6 @@
 # Last Updated: Sept 2022
 
 # Setup ----
-libs <- c("tidyverse", "RODBC", "lubridate", "janitor", "odbc", "DBI")
-if(length(libs[which(libs %in% rownames(installed.packages()) == FALSE )]) > 0) {install.packages(libs[which(libs %in% rownames(installed.packages()) == FALSE)])}
-lapply(libs, library, character.only = TRUE)
-
 dbname <- "akfin"
 db <- read_csv('database.csv')
 database_akfin=db %>% filter(database == dbname) %>% select(database) #need to add filter for AKFIN user/pass only
@@ -14,8 +10,6 @@ username_akfin=db %>% filter(database == dbname) %>% select(username)
 password_akfin=db %>% filter(database == dbname) %>% select(password)
 
 channel_akfin <- odbcConnect(dbname, uid = username_akfin, pwd = password_akfin, believeNRows=FALSE)
-
-AYR <- 2022 #Assessment year
 
 outpath <- paste0("Data/Cleaned/", AYR)
 dir.create(outpath)
@@ -38,7 +32,7 @@ AFSCTWL_HAULslope <- sqlQuery(channel_akfin, query = ("
   clean_names()
 
 AFSCTWL_HAUL <- AFSCTWL_HAULGOA %>% bind_rows(AFSCTWL_HAULshelf, AFSCTWL_HAULslope)
-write_csv(AFSCTWL_HAUL, paste0(rawpath, "/RACE_HAUL", AYR, ".csv"))
+write_csv(AFSCTWL_HAUL, paste0(rawpath, "/RACE_HAUL", SYR, ".csv"))
 
 # GOAAI survey biomass
 # by FMP sub area
@@ -91,4 +85,21 @@ AFSCTWL_BIOM <- AFSCTWL_ABio %>% bind_rows(AFSCTWL_FMPBio, AFSCTWL_shelfBio, AFS
   replace(is.na(.), 0) %>% 
   rename(strata = regulatory_area_name,
          biomass = area_biomass)
-write_csv(AFSCTWL_BIOM, paste0(outpath, "/RACE_biomass_sharks", AYR, ".csv")) 
+write_csv(AFSCTWL_BIOM, paste0(outpath, "/RACE_biomass_sharks", SYR, ".csv")) 
+
+# Stratum data ----
+AFSCTWL_STRATGOA <- sqlQuery(channel_akfin, query = ("
+                select    *
+                from      afsc.race_goastrataaigoa")) %>% 
+  clean_names()
+AFSCTWL_STRATshelf <- sqlQuery(channel_akfin, query = ("
+                select    *
+                from      afsc.race_strata_ebsshelf")) %>% 
+  clean_names()
+AFSCTWL_STRATslope <- sqlQuery(channel_akfin, query = ("
+                select    *
+                from      afsc.race_strata_ebsslope")) %>% 
+  clean_names()
+
+AFSCTWL_STRATA <- AFSCTWL_STRATGOA %>% bind_rows(AFSCTWL_STRATshelf, AFSCTWL_STRATslope)
+write_csv(AFSCTWL_STRATA, paste0(rawpath, "/RACE_STRATUM", SYR, ".csv"))

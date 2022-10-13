@@ -25,7 +25,7 @@ dir.create(paste0(getwd(),"/Output/",AYR), showWarnings = T)
 dir.create(paste0(getwd(),"/Documents/",AYR), showWarnings = T)
 
 # Get Data ----
-# RACE Survey Biomass
+# RACE Survey Biomass, this will probably need to be modified next assessment to work for rema
 source(paste(getwd(),"/Code/Get Data/AFSC_RACE_Biomass.R",sep=""))
 
 # AFSC LL Survey RPNs
@@ -51,12 +51,14 @@ source(paste(getwd(),"/Code/Get Data/ADFG.R",sep=""))
 
 # RACE Biomass ----
 # this is redundant and archaic, only needed for 2022 for bridging, Future will use rema package
-
+source(paste(getwd(),"/Code/RACE_biomass/RACE_shark_biomass.R",sep=""))
 
 # RFX ----
 # this is redundant and archaic, only needed for 2022 for bridging, Future will use rema package
+source(paste(getwd(),"/Code/RFX/RFX_sharks.R",sep=""))
 
 # Harvest Specs ----
+source(paste(getwd(),"/Code/ABC_OFL/Tier_5_6_Sharks.R",sep=""))
 
 # Assessment Figures ----
 

@@ -1,12 +1,7 @@
 # Setup ----
-
-library(tidyverse, janitor)
-
-AYR<-2020 #assessment year
-endyr<-2020 #end year for the RFX model, can be the last year of data
-
 datadir<-paste(getwd(),"/Output/",AYR,"/RACE_Biomass/",sep="")
 outdir<-paste(getwd(),"/Output/",AYR,"/RFX/",sep="")
+dir.create(outdir)
 codedir<-paste(getwd(),"/Code/RFX",sep="")
 figdir<-paste(getwd(),"/Output/",AYR,"/Figures/",sep="")
 
@@ -28,7 +23,6 @@ areas<-c("GOA", "WESTERN GOA", "EASTERN GOA", "CENTRAL GOA")
 SDRFX<-RFX[RFX$Group=="Spiny_Dogfish" & RFX$REGULATORY_AREA_NAME %in% areas,]
 
 # Last assessment RFX
-LAYR <- 2018
 pRFX<-read.csv(paste(getwd(),"/Output/",LAYR,"/RFX/RFX_Biomass_Spiny_Dogfish.csv",sep=""),header = T)
 pSDRFX<-pRFX[pRFX$Group=="Spiny_Dogfish" & pRFX$REGULATORY_AREA_NAME %in% areas,]
 
@@ -39,7 +33,7 @@ SD_GOA$RACEUL<-SD_GOA$Biomass+1.96*SD_GOA$SE
 SD_GOA$RACELL<-SD_GOA$Biomass-1.96*SD_GOA$SE
 
 #merge data sets together for easier graphing
-SD_RFX<-merge(SDRFX,SD_GOA,by=c("YEAR","REGULATORY_AREA_NAME","Group"),all=T)
+SD_RFX <- SDRFX %>% left_join(SD_GOA)
 #get rid of outrageous values for the sake of graphing
 #turns all LL values below zero into zero for graph
 SD_RFX[!is.na(SD_RFX$RACELL) & SD_RFX$RACELL<0,]$RACELL<-0 
