@@ -3,7 +3,7 @@
 #This function will estimate biomass for all surveys and sub-regions
 #I have not yet built in the flexibility to do separate depths
 
-
+library(plyr)
 # Biomass Function ----
 #Biomass estimation function, includes formatting data from AKFIN
 #Estimates biomass for each of the species/species groups provided
@@ -198,5 +198,5 @@ RACE_BIOMASS<-function(Species,outname,SYR,datapath,outpath){
   #e.g., EGOA in 2001
   loopmat[!(is.na(loopmat$Biomass))& loopmat$Biomass==0,]$CV <- 0
   loopmat[!(is.na(loopmat$Biomass))& loopmat$Biomass==0,]$CATCH_COUNT <- 0
-  write.csv(loopmat,paste(outpath,"RACE_Biomass_",outname,".csv",sep=""),row.names=F)
+  write.csv(loopmat,paste(outpath,"RACE_Biomass_",outname, AYR".csv",sep=""),row.names=F)
 }

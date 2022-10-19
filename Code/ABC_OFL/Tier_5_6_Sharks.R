@@ -30,6 +30,18 @@ T5specs$fmp_area<-"GOA"
 T5specs<-T5specs[,c("metric","fmp_area","T5OFL","T5ABC","cRFX","FOFL","FABC")]
 colnames(T5specs)[3:5]<-c("OFL","ABC","Biomass")
 
+# model summary tables
+T5sum<-RFXdat %>% 
+  filter(YEAR == SYR,
+         REGULATORY_AREA_NAME == "GOA") %>% 
+  select(Biom_est, Biom_LL, Biom_UL) %>% 
+  pivot_longer(cols = c('Biom_est', 'Biom_LL', 'Biom_UL'), names_to = 'EST', values_to = "Biomass_t") %>% 
+  mutate(Ba = Biomass_t / q,
+         OFL = round(Ba * FOFL, 0),
+         ABC = round(Ba *FABC, 0))
+
+write_csv(T5sum,paste0(outdir,"T5Summary_",AYR,".csv",sep=""))
+
 #Tier 6 Models for AFSC Sharks ----
 #Updated 10/13/2022 by C. Tribuzio
 

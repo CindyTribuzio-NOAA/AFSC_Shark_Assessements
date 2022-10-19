@@ -1,0 +1,3 @@
+species,fmp_area,score_type,mean_score,status,statistic,stat_value,scalar_type,scalar_value,OFL,ABC
+Pacific Sleeper Shark,BSAI,Conservative,1.9166666666666667,Fully Exploited,t10_25,53.98805682735001,S_50th,2.16,117,88
+Pacific Sleeper Shark,GOA,Conservative,1.9230769230769231,Fully Exploited,t10_25,91.02058648345,S_50th,2.16,197,148
