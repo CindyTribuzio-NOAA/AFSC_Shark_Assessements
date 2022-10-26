@@ -51,7 +51,7 @@ AFSCLL_size<-AFSCLL_freq[rep(row.names(AFSCLL_freq),AFSCLL_freq$Frequency),1:5]
 AFSCLL_size$Source<-"AFSCLL"
 
 AFSCLL_freq <- AFSCLL_freq %>% 
-  mutate(Source = "AFSCTWL",
+  mutate(Source = "AFSCLL",
          binL = floor(Length/5)*5,
          binL = if_else(binL > Lgroups[Lgroups$species_code == 310, 'plus'], Lgroups[Lgroups$species_code == 310, 'plus'],
                if_else(binL < Lgroups[Lgroups$species_code == 310, 'minus'], Lgroups[Lgroups$species_code == 310, 'minus'], binL))) %>% 
@@ -134,25 +134,22 @@ AFSCTWL_freq <- SSTWL_dat %>%  bind_rows(SDTWL_dat) %>% select(!Length)
 IPHC_size<-read.csv(paste(outpath,"/IPHC_dogfish_lengths", AYR,".csv",sep=""), header=T) %>%
   clean_names() %>% 
   filter(sex != "U") %>% #get rid of uknown sexes, not too many of them
-  mutate(binL = floor(length/5)*5,
-         binL = if_else(binL > Lgroups[Lgroups$species_code == 310, 'plus'], Lgroups[Lgroups$species_code == 310, 'plus'],
-                        if_else(binL < Lgroups[Lgroups$species_code == 310, 'minus'], Lgroups[Lgroups$species_code == 310, 'minus'], binL)),
-         Source = "IPHCLL",
-         species = 310) %>% 
-  select(year, fmp, length, sex, binL)
-
-
+  mutate(Source = "IPHCLL",
+         Species = 310) %>% 
+  select(year, fmp, length, sex, Source, Species) %>% 
+  rename(Year = year, 
+         FMP = fmp,
+         Length = length,
+         Sex = sex)
 
 IPHC_freq<- IPHC_size %>% 
-  group_by(year, fmp, binL, sex) %>% 
-  summarise(Frequency = length(length)) %>% 
+  mutate(binL = floor(Length/5)*5,
+         binL = if_else(binL > Lgroups[Lgroups$species_code == 310, 'plus'], Lgroups[Lgroups$species_code == 310, 'plus'],
+                        if_else(binL < Lgroups[Lgroups$species_code == 310, 'minus'], Lgroups[Lgroups$species_code == 310, 'minus'], binL))) %>% 
+  group_by(Year, FMP, binL, Sex) %>% 
+  summarise(Frequency = length(Length)) %>% 
   mutate(Source = "IPHCLL",
          Species = 310)
-
-
-
-
-
 
 # Combine all data ----
 shark_L_freq<-bind_rows(IPHC_freq, AFSCLL_freq, AFSCTWL_freq)
