@@ -20,7 +20,7 @@ q<-0.21
 
 RFXdat<-read.csv(paste(datadir,"/RFX_Biomass_Spiny_Dogfish.csv",sep=""),header=T)
 
-cRFX<-RFXdat[RFXdat$YEAR==SYR & RFXdat$REGULATORY_AREA_NAME=="GOA",]$Biom_est
+cRFX<-round(RFXdat[RFXdat$YEAR==SYR & RFXdat$REGULATORY_AREA_NAME=="GOA",]$Biom_est,0)
 T5OFL<- round((cRFX/q)*FOFL, 0)
 T5ABC<- round((cRFX/q)*FABC, 0)
 
@@ -34,9 +34,12 @@ colnames(T5specs)[3:5]<-c("OFL","ABC","Biomass")
 T5sum<-RFXdat %>% 
   filter(YEAR == SYR,
          REGULATORY_AREA_NAME == "GOA") %>% 
-  select(Biom_est, Biom_LL, Biom_UL) %>% 
+  select(Biom_est, 0, Biom_LL, 0, Biom_UL, 0) %>% 
+  mutate(Biom_est = round(Biom_est, 0), 
+         Biom_LL = round(Biom_LL, 0), 
+         Biom_UL = round(Biom_UL, 0)) %>% 
   pivot_longer(cols = c('Biom_est', 'Biom_LL', 'Biom_UL'), names_to = 'EST', values_to = "Biomass_t") %>% 
-  mutate(Ba = Biomass_t / q,
+  mutate(Ba = round(Biomass_t / q, 0),
          OFL = round(Ba * FOFL, 0),
          ABC = round(Ba *FABC, 0))
 
